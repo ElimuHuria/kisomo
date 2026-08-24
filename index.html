@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Elimu Huria - Pakua mitihani ya shule za msingi Darasa la III hadi VII bure.">
+<title>Elimu Huria | Mitihani ya Shule za Msingi</title>
+
+<!-- Font Awesome kwa ajili ya Icon Halisi za Mitandao ya Kijamii -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* ========================= RESET ========================== */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, Helvetica, sans-serif; }
+html { scroll-behavior: smooth; }
+body { background: #f4f7fb; color: #1f2937; line-height: 1.6; transition: 0.3s; }
+a { text-decoration: none; }
+button { cursor: pointer; }
+
+/* ========================= HEADER ========================== */
+header { background: #073b4c; color: white; position: sticky; top: 0; z-index: 1000; box-shadow: 0 3px 15px rgba(0,0,0,0.15); }
+.navbar { max-width: 1200px; margin: auto; padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 26px; font-weight: 900; letter-spacing: 1px; color: white; }
+.logo span { color: #ffd166; }
+.nav-links { display: flex; list-style: none; gap: 15px; }
+.nav-links a { color: white; font-weight: bold; transition: 0.3s; font-size: 15px; }
+.nav-links a:hover { color: #ffd166; }
+.menu-btn { display: none; background: none; border: none; color: white; font-size: 28px; }
+
+/* ========================= HERO ========================== */
+.hero { background: linear-gradient(135deg, #073b4c, #118ab2); color: white; padding: 70px 20px; text-align: center; }
+.hero h1 { font-size: 42px; margin-bottom: 15px; }
+.hero h1 span { color: #ffd166; }
+.hero p { max-width: 750px; margin: auto; font-size: 18px; color: #e7f7ff; }
+
+/* ========================= SEARCH ========================== */
+.search-area { max-width: 800px; margin: -25px auto 30px; padding: 0 20px; }
+.search-box { background: white; padding: 8px; border-radius: 50px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); display: flex; }
+.search-box input { flex: 1; border: none; outline: none; padding: 10px 20px; font-size: 15px; }
+.search-box button { border: none; background: #06d6a0; color: white; padding: 0 20px; border-radius: 30px; font-weight: bold; }
+
+/* ========================= GENERAL ========================== */
+section { padding: 40px 20px; }
+.container { max-width: 1100px; margin: auto; }
+.section-title { text-align: center; margin-bottom: 30px; }
+.section-title h2 { color: #073b4c; font-size: 30px; margin-bottom: 8px; }
+.section-title p { color: #6b7280; }
+
+/* ========================= CLASS CARDS ========================== */
+.classes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+.class-card { background: white; padding: 18px 10px; text-align: center; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.06); transition: 0.3s; }
+.class-card:hover { transform: translateY(-4px); }
+.class-icon { font-size: 32px; }
+.class-card h3 { color: #073b4c; margin: 6px 0; font-size: 18px; }
+.class-card a { display: inline-block; background: #118ab2; color: white; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: bold; }
+
+/* ========================= EXAMS BY CLASS ========================== */
+.class-section { margin-bottom: 35px; background: white; padding: 22px; border-radius: 15px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.class-section h3 { color: #073b4c; font-size: 22px; border-bottom: 2px solid #ffd166; padding-bottom: 6px; margin-bottom: 18px; }
+.exam-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.exam-card { background: #f8fafc; padding: 15px; border-radius: 10px; border: 1px solid #e2e8f0; display: flex; justify-content: space-between; align-items: center; }
+.exam-info h4 { color: #073b4c; font-size: 16px; margin-bottom: 2px; }
+.exam-info p { color: #6b7280; font-size: 12px; }
+.download-btn { background: #06d6a0; color: white; border: none; padding: 8px 15px; border-radius: 20px; font-weight: bold; font-size: 13px; }
+.download-btn:hover { background: #04b889; }
+
+/* ========================= ABOUT & SOCIAL ICONS ========================== */
+.about { background: #073b4c; color: white; border-radius: 15px; padding: 30px 20px; text-align: center; }
+.about h2 { font-size: 28px; margin-bottom: 10px; }
+.about p { color: #dcecf2; margin-bottom: 15px; font-size: 15px; }
+
+.social-circle-container { display: flex; justify-content: center; gap: 15px; margin-top: 15px; }
+.social-icon { 
+  width: 42px; 
+  height: 42px; 
+  border-radius: 50%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  color: white; 
+  font-size: 20px; 
+  transition: 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+.social-icon:hover { transform: scale(1.1); }
+.whatsapp { background: #25D366; }
+.instagram { background: linear-gradient(45deg, #feda75, #d62976, #4f5bd5); }
+.facebook { background: #1877F2; }
+
+.author-name {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #ffd166;
+  letter-spacing: 0.5px;
+}
+
+/* ========================= FOOTER ========================== */
+footer { background: #052b38; color: white; padding: 25px 20px; text-align: center; margin-top: 30px; }
+footer p { color: #b8cdd4; font-size: 13px; }
+
+/* ========================= DARK MODE ========================== */
+body.dark { background: #111827; color: #f9fafb; }
+body.dark .class-card, body.dark .class-section, body.dark .search-box { background: #1f2937; color: white; }
+body.dark .class-section h3, body.dark .exam-info h4 { color: white; }
+body.dark .exam-card { background: #374151; border-color: #4b5563; }
+body.dark .exam-info p { color: #cbd5e1; }
+.dark-btn { position: fixed; right: 15px; bottom: 15px; width: 42px; height: 42px; border: none; border-radius: 50%; background: #073b4c; color: white; font-size: 18px; z-index: 999; }
+
+/* ========================= MOBILE ========================== */
+@media (max-width: 900px) {
+  .classes { grid-template-columns: repeat(3, 1fr); }
+  .exam-list { grid-template-columns: 1fr; }
+}
+@media (max-width: 650px) {
+  .navbar { flex-wrap: wrap; }
+  .menu-btn { display: block; }
+  .nav-links { display: none; width: 100%; flex-direction: column; text-align: center; padding-top: 15px; }
+  .nav-links.active { display: flex; }
+  .classes { grid-template-columns: repeat(2, 1fr); }
+  .hero h1 { font-size: 32px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========================= HEADER ========================== -->
+<header>
+<nav class="navbar">
+  <div class="logo">Elimu <span>Huria.</span></div>
+  <button class="menu-btn" onclick="funguaMenu()">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#nyumbani">Nyumbani</a></li>
+    <li><a href="#darasa3">Darasa III</a></li>
+    <li><a href="#darasa4">Darasa IV</a></li>
+    <li><a href="#darasa5">Darasa V</a></li>
+    <li><a href="#darasa6">Darasa VI</a></li>
+    <li><a href="#darasa7">Darasa VII</a></li>
+    <li><a href="#kuhusu">Kuhusu</a></li>
+  </ul>
+</nav>
+</header>
+
+<!-- ========================= HERO ========================== -->
+<section class="hero" id="nyumbani">
+  <div class="hero-content">
+    <h1>Karibu <span>Elimu Huria</span></h1>
+    <p>Pakua mitihani yote ya shule za msingi kwa kila darasa bure kabisa.</p>
+  </div>
+</section>
+
+<!-- ========================= SEARCH ========================== -->
+<div class="search-area">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="🔎 Tafuta mtihani au darasa..." onkeyup="tafutaMtihani()">
+    <button onclick="tafutaMtihani()">Tafuta</button>
+  </div>
+</div>
+
+<!-- ========================= MADARASA ========================== -->
+<section>
+  <div class="container">
+    <div class="section-title">
+      <h2>📚 Chagua Darasa</h2>
+      <p>Bonyeza darasa husika kupata mitihani yake moja kwa moja.</p>
+    </div>
+    <div class="classes">
+      <div class="class-card"><div class="class-icon">🎒</div><h3>Darasa III</h3><a href="#darasa3">Fungua</a></div>
+      <div class="class-card"><div class="class-icon">📘</div><h3>Darasa IV</h3><a href="#darasa4">Fungua</a></div>
+      <div class="class-card"><div class="class-icon">📗</div><h3>Darasa V</h3><a href="#darasa5">Fungua</a></div>
+      <div class="class-card"><div class="class-icon">📙</div><h3>Darasa VI</h3><a href="#darasa6">Fungua</a></div>
+      <div class="class-card"><div class="class-icon">🎓</div><h3>Darasa VII</h3><a href="#darasa7">Fungua</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= MITIHANI KWA KILA DARASA ========================== -->
+<section id="mitihani">
+  <div class="container">
+
+    <!-- DARASA III -->
+    <div class="class-section" id="darasa3">
+      <h3>🎒 Mitihani ya Darasa la III</h3>
+      <div class="exam-list">
+        <div class="exam-card">
+          <div class="exam-info"><h4>Mtihani wa 1 - Darasa III</h4><p>Faili la PDF</p></div>
+          <a href="mitihani/darasa3/mtihani1.pdf" class="download-btn" download>📥 Pakua</a>
+        </div>
+        <div class="exam-card">
+          <div class="exam-info"><h4>Mtihani wa 2 - Darasa III</h4><p>Faili la PDF</p></div>
+          <a href="mitihani/darasa3/mtihani2.pdf" class="download-btn" download>📥 Pakua</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- DARASA IV -->
+    <div class="class-section" id="darasa4">
+      <h3>📘 Mitihani ya Darasa la IV</h3>
+      <div class="exam-list">
+        <div class="exam-card">
+          <div class="exam-info"><h4>Mtihani wa 1 - Darasa IV</h4><p>Faili la PDF</p></div>
+          <a href="mitihani/darasa4/mtihani1.pdf" class="download-btn" download>📥 Pakua</a>
+        </div>
+        <div class="exam-card">
+          <div class="exam-info"><h4>Mtihani wa 2 - Darasa IV</h4><p>Faili la PDF</p></div>
+          <a href="mitihani/darasa4/mtihani2.pdf" class="download-btn" download>📥 Pakua</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- DARASA V -->
+    <div class="class-section" id="darasa5">
+      <h3>📗 Mitihani ya Darasa la V</h3>
+      <div class="exam-list">
+        <div class="exam-card">
+          <div class="exam-info"><h4>Mtihani wa 1 - Darasa V</h4><p>Faili la PDF</p></div>
+          <a href="mitihani/darasa5/mtihani1.pdf" class="download-btn" download>📥 Pakua</a>
+        </div>
+        <div class="exam-card">
+          <div class="exam-info"><h4>Mtihani wa 2 - Darasa V</h4><p>Faili la PDF</p></div>
+          <a href="mitihani/darasa5/mtihani2.pdf" class="download-btn" download>📥 Pakua</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- DARASA VI -->
+    <div class="class-section" id="darasa6">
+      <h3>📙 Mitihani ya Darasa la VI</h3>
+      <div class="exam-list">
+        <div class="exam-card">
+          <div class="exam-info"><h4>Mtihani wa 1 - Darasa VI</h4><p>Faili la PDF</p></div>
+          <a href="mitihani/darasa6/mtihani1.pdf" class="download-btn" download>📥 Pakua</a>
+        </div>
+        <div class="exam-card">
+          <div class="exam-info"><h4>Mtihani wa 2 - Darasa VI</h4><p>Faili la PDF</p></div>
+          <a href="mitihani/darasa6/mtihani2.pdf" class="download-btn" download>📥 Pakua</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- DARASA VII -->
+    <div class="class-section" id="darasa7">
+      <h3>🎓 Mitihani ya Darasa la VII</h3>
+      <div class="exam-list">
+        <div class="exam-card">
+          <div class="exam-info"><h4>Mtihani wa 1 - Darasa VII</h4><p>Faili la PDF</p></div>
+          <a href="mitihani/darasa7/mtihani1.pdf" class="download-btn" download>📥 Pakua</a>
+        </div>
+        <div class="exam-card">
+          <div class="exam-info"><h4>Mtihani wa 2 - Darasa VII</h4><p>Faili la PDF</p></div>
+          <a href="mitihani/darasa7/mtihani2.pdf" class="download-btn" download>📥 Pakua</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================= KUHUSU & SOCIAL ICONS ========================== -->
+<section id="kuhusu">
+  <div class="container">
+    <div class="about">
+      <h2>Kuhusu Elimu Huria</h2>
+      <p>Elimu Huria ni tovuti ya kupakua mitihani ya shule za msingi kwa kila darasa bure kabisa.</p>
+      
+      <!-- Logo Halisi za Mitandao ya Kijamii (Icons Ndogo za Duara) -->
+      <div class="social-circle-container">
+        <a href="https://wa.me/255766265800" target="_blank" class="social-icon whatsapp" title="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/magodijr" target="_blank" class="social-icon instagram" title="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/musserdeko" target="_blank" class="social-icon facebook" title="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+      </div>
+
+      <!-- Jina lako chini ya logo -->
+      <div class="author-name">Mwl. Mussa I. Masaga</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= FOOTER ========================== -->
+<footer>
+  <div class="logo">Elimu <span>Huria.</span></div>
+  <p>Mitihani ya Shule za Msingi | Darasa III - VII</p>
+  <p>© 2026 Elimu Huria. Haki zote zimehifadhiwa.</p>
+</footer>
+
+<button class="dark-btn" onclick="darkMode()" title="Badilisha muonekano">🌙</button>
+
+<script>
+function funguaMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
+function darkMode() {
+  document.body.classList.toggle("dark");
+}
+function tafutaMtihani() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let cards = document.querySelectorAll(".exam-card");
+  cards.forEach(function(card) {
+    let text = card.innerText.toLowerCase();
+    card.style.display = text.includes(input) ? "flex" : "none";
+  });
+}
+</script>
+</body>
+</html>
